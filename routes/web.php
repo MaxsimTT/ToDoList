@@ -25,4 +25,4 @@ Route::controller(Authenticate::class)->group(function () {
     Route::post('registration', 'attach')->name('reg_user');
 });
 
-Route::get('/', [ToDo::class, 'index'])->middleware('auth')->name('todo_show');
+Route::get('/', [ToDo::class, 'show'])->middleware('auth')->name('todo_show');
