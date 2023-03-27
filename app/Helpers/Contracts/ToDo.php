@@ -9,6 +9,6 @@ interface ToDo
 
 	public function addTask(Request $request);
 
-	public function getTasks();
+	public function getToDoList(int $items, string $sort = 'desc');
 
 }

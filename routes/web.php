@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authenticate;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ToDo;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ToDoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,7 @@ Route::controller(Authenticate::class)->group(function () {
 });
 
 Route::get('/', [ToDo::class, 'show'])->middleware('auth')->name('todo_show');
+
+// Route::resource('products', ProductController::class)->middleware('auth');
+
+Route::resource('todo', ToDoController::class)->middleware('auth');
